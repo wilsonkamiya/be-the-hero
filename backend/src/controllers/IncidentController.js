@@ -14,11 +14,11 @@ module.exports= {
                                                         .limit(5)
                                                         .offset((page-1)*5)
                                                         .select(['incidents.*',
-                                                                    'ong.name',
-                                                                    'ong.email',
-                                                                    'ong.whatsapp',
-                                                                    'ong.city',
-                                                                    'ong.uf']);
+                                                                    'ongs.name',
+                                                                    'ongs.email',
+                                                                    'ongs.whatsapp',
+                                                                    'ongs.city',
+                                                                    'ongs.uf']);
 
        //devolve o total de itens para o front end consumir atraves da propriedade count(*)     
         response.header('X-Total-Count',count['count(*)']);
