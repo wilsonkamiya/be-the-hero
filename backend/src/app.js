@@ -2,7 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const routes = require('./routes'); //referencia o arquivo routes.js
-
+const {errors} = require('celebrate');
 //instanciando o express dentro da variavel app
 const app = express();
 
@@ -10,7 +10,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(routes);
-
+app.use(errors());
 
 /*
     rotaa / recurso
@@ -42,4 +42,6 @@ Query Builder: table('usuarios').select('*').where();    --knex (pacote utilizad
 */ 
 
 //fazendo a aplicação escutar/executar na porta 3333
-app.listen(3333);
+//app.listen(3333);
+
+module.exports = app;
